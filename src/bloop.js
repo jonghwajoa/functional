@@ -1,4 +1,8 @@
 const isArrayLike = require('./is-array-like');
+const pushTo = require('./push-to');
+const noop = require('./noop');
+const array = require('./array');
+const identity = require('./identity');
 
 const bloop = (newData, body) => {
   return (data, iteratee) => {
@@ -18,8 +22,8 @@ const bloop = (newData, body) => {
   };
 };
 
-const bloopMap = bloop(() => [], (value, object) => object.push(value));
-const bloopEach = bloop(value => value, () => {});
+const bloopMap = bloop(array, pushTo);
+const bloopEach = bloop(identity, noop);
 
 module.exports = {
   map: bloopMap,
