@@ -1,0 +1,32 @@
+{
+  "name": "functional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive test/*.spec.js",
+    "test:watch": "mocha -w --recursive test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonghwajoa/functional.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonghwajoa/functional/issues"
+  },
+  "homepage": "https://github.com/jonghwajoa/functional#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "husky": "^3.0.7",
+    "lint-staged": "^10.0.0-0",
+    "precise-commits": "^1.0.2",
+    "prettier": "^1.18.2",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "mocha": "^6.2.1"
+  }
+}
