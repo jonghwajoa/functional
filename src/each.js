@@ -1,7 +1,7 @@
 const isArrayLike = require('./is-array-like');
 
 const each = (data, iteratee) => {
-  if (isArrayLike(each)) {
+  if (isArrayLike(data)) {
     const length = data.length;
     for (let i = 0; i < length; i++) {
       iteratee(data[i], i, data);
