@@ -3,6 +3,7 @@ const pushTo = require('./push-to');
 const noop = require('./noop');
 const array = require('./array');
 const identity = require('./identity');
+const keys = require('./keys');
 
 const bloop = (newData, body) => {
   return (data, iteratee) => {
@@ -15,8 +16,10 @@ const bloop = (newData, body) => {
       return newArray;
     }
 
-    for (const key in data) {
-      body(iteratee(data[key], key, data), newArray);
+    const keyData = keys(data);
+    const length = keyData.length;
+    for (let i = 0; i < length; i++) {
+      body(iteratee(data[keyData[i]], keyData[i], data), newArray);
     }
     return newArray;
   };
